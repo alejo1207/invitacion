@@ -644,7 +644,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="popup">
+	
+<section id="home" class="video-hero js-fullheight" style="height: 700px; background-image: url(images/bg_1.jpg); background-size:cover; background-position: top center;" data-stellar-background-ratio="0.5">
+	  	<div class="overlay"></div>
+			<a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=Mjjw19B7rMk',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default',optimizeDisplay:true}"></a>
+			<div class="container">
+				<div class="row js-fullheight justify-content-center d-flex align-items-center">
+					<div class="col-md-12">
+						<div class="text text-center">
+							<div class="icon">
+								<span class="flaticon-rose-outline-variant-with-vines-and-leaves"></span>
+							</div>
+							<span class="subheading">Nuestra Boda</span>
+							<h1>Alexandra &amp; Alejandro</h1>
+							<div id="timer" class="d-flex">
+							  <div class="time" id="days"></div>
+							  <div class="time pl-3" id="hours"></div>
+							  <div class="time pl-3" id="minutes"></div>
+							  <div class="time pl-3" id="seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+
+
+	
+	<div id="popup">
       <div id="popup-content">
           <p>¡Alexandra & Alejandro!</p>
           <button id="accept-button">Aceptar</button>
@@ -1154,30 +1186,7 @@ window.addEventListener("load", fadeInOnScroll);
         sr.reveal('.tituloceremony-container', { interval: 200 });
         sr.reveal('.thank-you', { interval: 200 });
 
-        <section id="home" class="video-hero js-fullheight" style="height: 700px; background-image: url(images/bg_1.jpg); background-size:cover; background-position: top center;" data-stellar-background-ratio="0.5">
-	  	<div class="overlay"></div>
-			<a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=Mjjw19B7rMk',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default',optimizeDisplay:true}"></a>
-			<div class="container">
-				<div class="row js-fullheight justify-content-center d-flex align-items-center">
-					<div class="col-md-12">
-						<div class="text text-center">
-							<div class="icon">
-								<span class="flaticon-rose-outline-variant-with-vines-and-leaves"></span>
-							</div>
-							<span class="subheading">Nuestra Boda</span>
-							<h1>Alexandra &amp; Alejandro</h1>
-							<div id="timer" class="d-flex">
-							  <div class="time" id="days"></div>
-							  <div class="time pl-3" id="hours"></div>
-							  <div class="time pl-3" id="minutes"></div>
-							  <div class="time pl-3" id="seconds"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
+        
         
     </script>
 </body>
