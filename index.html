@@ -17,55 +17,7 @@
     <title>Invitación de Boda</title>
     <style>
 
-.luces-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-}
 
-.luz {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  animation: flotar 20s infinite ease-in-out;
-}
-
-.luz:nth-child(1) {
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.luz:nth-child(2) {
-  top: 50%;
-  left: 80%;
-  animation-delay: 5s;
-}
-
-.luz:nth-child(3) {
-  top: 70%;
-  left: 30%;
-  animation-delay: 10s;
-}
-
-@keyframes flotar {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-20px) scale(1.2);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
-}	
 
 	    
 	 .petalo {
@@ -756,11 +708,6 @@
 </head>
 <body>
 	
-<div class="luces-container">
-  <div class="luz"></div>
-  <div class="luz"></div>
-  <div class="luz"></div>
-</div>
 	
     <div id="popup">
   <div id="popup-content" style="
