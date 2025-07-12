@@ -90,27 +90,26 @@
 		
         }
         #pause-button,
-        #play-button {
-          display:none; 
-          position :fixed; 
-          top :10px; 
-          right :10px; 
-          background:none; 
-          border:none; 
-          cursor:pointer; 
-          color :goldenrod; 
-          font-size :24px; 
-          outline:none;
-          z-index: 9999; /* Asegura que los botones estén en el frente */
-        }
-        h1 {
-          font-family: 'Noto Serif TC', serif; 
-          color : #ffffff; 
-          font-size :90px;
-          text-shadow: -5px 3px 3px #808080;
-            align-items:center; 
-             justify-content:center;
-        }
+	#play-button {
+ 		position: fixed;
+  		top: 20px;
+  		right: 20px;
+  		background: rgba(255, 255, 255, 0.25); /* fondo semi-transparente */
+  		border: 2px solid #4aa3df; /* azul claro */
+  		border-radius: 50%;
+  		padding: 10px 12px;
+  		font-size: 20px;
+  		color: #004466; /* azul oscuro */
+  		cursor: pointer;
+  		z-index: 9999;
+  		backdrop-filter: blur(6px);
+  		transition: all 0.3s ease;
+}
+	#pause-button:hover,
+	#play-button:hover {
+  		background-color: rgba(255, 255, 255, 0.4);
+  		transform: scale(1.1);
+}
 
         #spacer {
           display: flex;
