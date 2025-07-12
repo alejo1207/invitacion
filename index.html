@@ -16,7 +16,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
     <title>Invitación de Boda</title>
     <style>
-        /* Estilos para la página #ffe9da original */
+	.petalo {
+  position: fixed;
+  top: -50px;
+  font-size: 24px;
+  animation: caer 10s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes caer {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+	    
+	    /* Estilos para la página #ffe9da original */
         body {
             font-family: 'Noto Serif TC', serif;
             margin: 0;
@@ -1200,5 +1221,22 @@ window.addEventListener("load", fadeInOnScroll);
         
         
     </script>
+	
+	    <script>
+  // Crear pétalos aleatorios
+  const petalos = ["🌸", "💮", "❀", "🌺"];
+  setInterval(() => {
+    const petalo = document.createElement("div");
+    petalo.classList.add("petalo");
+    petalo.innerText = petalos[Math.floor(Math.random() * petalos.length)];
+    petalo.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(petalo);
+
+    setTimeout(() => {
+      petalo.remove();
+    }, 10000);
+  }, 300);
+</script>    
+
 </body>
 </html>
