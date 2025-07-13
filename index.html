@@ -31,19 +31,21 @@
 	    /* Estilos para la página #ffe9da original */
         body {
   		margin: 0;
- 		padding: 0;
-  		height: 100%;
+  		padding: 0;
   		min-height: 100vh;
-  		background-image: url("cover1.jpg");
+  		background: linear-gradient(rgba(212, 241, 249, 0.6), rgba(212, 241, 249, 0.6)),
+                url("source/cover1.jpg") no-repeat center center;
   		background-size: cover;
-  		background-position: center center;
+  		background-position: center;
   		background-repeat: no-repeat;
-  		background-attachment: scroll;
+ 		background-attachment: scroll; /* scroll para compatibilidad móvil */
   		font-family: 'Noto Serif TC', serif;
 	}
+	    
         header {
              background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("source/cover1.jpg") no-repeat center center fixed;
-             background-size: cover;
+             
+	     background-size: cover;
              height: 100vh;
              display: flex;
              flex-direction: column;
