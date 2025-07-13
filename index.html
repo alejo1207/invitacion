@@ -25,25 +25,7 @@
 <meta property="og:type" content="website">
 
 	    
-	 .petalo {
-  position: fixed;
-  top: -50px;
-  font-size: 24px;
-  animation: caer 10s linear infinite;
-  pointer-events: none;
-  z-index: 1;
-}
 
-@keyframes caer {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0;
-  }
-}
 
 	    
 	    /* Estilos para la página #ffe9da original */
@@ -702,6 +684,26 @@
     font-size: 50px !important;
     text-align: center;
   }
+}	   
+
+.petalo {
+  position: fixed;
+  top: -50px;
+  font-size: 24px;
+  animation: caer 10s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes caer {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
 }	    
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1231,7 +1233,7 @@ window.addEventListener("load", fadeInOnScroll);
         
     </script>
 	
-	    <script>
+<script>
   // Crear pétalos aleatorios
   const petalos = ["✨", "💮", "❀", "🌹", "❤️", "💖","💞","💓",];
   setInterval(() => {
