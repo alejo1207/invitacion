@@ -30,15 +30,17 @@
 	    
 	    /* Estilos para la página #ffe9da original */
         body {
-            font-family: 'Noto Serif TC', serif;
-            margin: 0;
-            background: linear-gradient(rgba(212, 241, 249, 0.7), rgba(212, 241, 249, 0.7)), url("source/cover1.jpg") no-repeat center center fixed;
-            background-size: cover;
-            min-height: 100vh;
-	    background-attachment: scroll; /* Reemplaza 'fixed' si no funciona en iPhone */
-
-            
-        }
+  		margin: 0;
+  		padding: 0;
+  		height: 100%;
+  		min-height: 100vh;
+  		background: linear-gradient(rgba(212, 241, 249, 0.6), rgba(212, 241, 249, 0.6)),
+              url("source/cover1.jpg") no-repeat center center;
+  		background-size: cover;
+  		background-attachment: scroll; /* mejor compatibilidad móvil */
+  		font-family: 'Noto Serif TC', serif;
+  		overflow-x: hidden;
+	}
         header {
              background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("source/cover1.jpg") no-repeat center center fixed;
              background-size: cover;
