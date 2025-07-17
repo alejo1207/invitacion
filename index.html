@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="https://unpkg.com/scrollreveal@4.0.7/dist/scrollreveal.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+    <title>Invitación de Boda</title>
+    <style>
+
+<!-- Etiquetas Open Graph para WhatsApp y redes sociales -->
+<meta property="og:title" content="Alexandra & Alejandro - ¡Nos casamos! 💍">
+<meta property="og:description" content="Te invitamos a nuestra boda el 4 de octubre de 2025. ¡Haz clic para ver los detalles!">
+<meta property="og:image" content="https://alejo1207.github.io/invitacion/source/preview.jpg">
+<meta property="og:url" content="https://alejo1207.github.io/invitacion/">
+<meta property="og:type" content="website">
+
+	    
+
+
+	    
+	    /* Estilos para la página #ffe9da original */
+        body {
+  		margin: 0;
+  		padding: 0;
+  		min-height: 100vh;
+  		background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0)), url("source/cover1.jpg") no-repeat center center;
+  		background-size: cover;
+  		background-position: center;
+  		background-repeat: no-repeat;
+ 		background-attachment: scroll; /* scroll para compatibilidad móvil */
+  		font-family: 'Noto Serif TC', serif;
+	}
+	    
+        header {
+             
+	     background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("source/cover1.jpg") no-repeat center center;
+             background-size: cover;
+             height: 100vh;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: center;
+             text-align: center;
+             color: rgba(255,255,255,0.6);
+        }
+        #content {
+            padding: 20px;
+        }
+        main {
+            padding-top: 60px;
+        }
+        #popup {
+            font-family: 'Noto Serif TC', serif;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("source/cover1.jpg") no-repeat center center;
+            background-size: cover;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            z-index: 9999;
+           
+        }
+       #popup-content {
+  		background-color: rgba(255, 255, 255, 0.25);
+  		-webkit-backdrop-filter: blur(6px);
+  		backdrop-filter: blur(6px);
+ 		 width: 90%;
+ 		 max-width: 600px;
+ 		 padding: 30px;
+ 		 text-align: center;
+		  border-radius: 20px;
+	}
+        #accept-button {
+  		margin-top: 40px;
+  		padding: 16px 40px;
+  		font-size: 18px;
+  		font-family: 'Merienda', cursive;
+  		color: #004466;
+  		background-color: rgba(255, 255, 255, 0.25); /* blanco transparente */
+  		border: 2px solid #87CEEB;
+  		border-radius: 30px;
+  		box-shadow: 0 8px 20px rgba(135, 206, 235, 0.3);
+  		backdrop-filter: blur(6px); /* efecto de cristal */
+  		cursor: pointer;
+  		transition: all 0.3s ease;
+}
+	#accept-button:hover {
+  		background-color: rgba(255, 255, 255, 0.4);
+  		transform: scale(1.05);
+  		box-shadow: 0 10px 25px rgba(135, 206, 235, 0.5);
+}
+
+                           
+		
+        }
+        #pause-button,
+	#play-button {
+ 		position: fixed;
+  		top: 20px;
+  		right: 20px;
+  		background: rgba(255, 255, 255, 0.25); /* fondo semi-transparente */
+  		border: 2px solid #4aa3df; /* azul claro */
+  		border-radius: 50%;
+  		padding: 10px 12px;
+  		font-size: 20px;
+  		color: #004466; /* azul oscuro */
+  		cursor: pointer;
+  		z-index: 9999;
+  		backdrop-filter: blur(6px);
+  		transition: all 0.3s ease;
+}
+	
+
+
+        #spacer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: #ffe9da;
+          padding: 20px;
+          text-align: center;
+        }
+
+        #spacer p {
+          margin: 0;
+        }
+
+        .contador-content{
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+        }
+        .contador-img{
+            height: 30px;
+            width: 30px;
+        }
+
+
+
+        /* Estilos para el carrusel */
+
+        .carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 33.75em;
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .carousel-inner {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .carousel-button.left {
+            left: 20px;
+        }
+
+        .carousel-button.right {
+            right: 20px;
+        }
+       
+        .centered-paragraph {
+            text-align: center;
+        }
+
+        .centered-paragraph p {
+            display: inline-block;
+            text-align: justify;
+            margin: 0 auto;
+            max-width: 90%;
+            font-family: 'Noto Serif TC', serif;
+            font-weight: bold;
+            color: #5e5e5e;
+            font-size: 18px;
+            
+        }
+
+        /*MAPA*/
+        .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 90%;
+  height: auto;
+  border-radius: 30px;
+  border: 1px solid #ffffff;
+  
+}
+
+.map-container {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.centered-paragraph {
+  text-align: center;
+  margin: 0;
+}
+
+#location-button {
+  background-color: #4aa3df;
+  border: none;
+}
+
+
+        /*titulo ceremonia*/
+        .tituloceremony-container {
+              color: #004466;
+              padding: 20px;
+              border-radius: 10px;
+              text-align: center;
+              margin-top: 20px;
+        }
+        .tituloceremony-container h2 {
+              margin: 0;
+              font-size: 24px;
+              font-family: 'Merienda', cursive;
+        }
+
+        .img-ceremony{
+            width: 50px;
+            height: 50px;
+        }
+
+
+
+        /* informacion religiosa*/
+        .ceremony-container {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 4cm;
+        }
+
+        .ceremony-container h2 {
+              font-size: 24px;
+              text-shadow: -5px 3px 3px #808080;
+              font-family: 'Noto Serif TC', serif;
+              margin: 0;
+              text-align: center; /* Alinea el texto al centro horizontalmente */
+        }
+
+@media screen and (max-width: 768px) {
+        .ceremony-container {
+             height: auto;
+        }
+
+        .ceremony-container h2 {
+             font-size: 24px;
+             text-shadow: -5px 3px 3px #808080;
+             font-family: 'Noto Serif TC', serif;
+             margin: 0;
+             text-align: center; /* Alinea el texto al centro horizontalmente */
+        }
+    }
+        table {
+            margin: 0 auto; /* Centra la tabla horizontalmente */
+        }
+        
+        /* estilos para el titulo de ebndicion*/
+        .bendicion-container {
+          color: #004466;
+          padding: 20px;
+          border-radius: 10px;
+          text-align: center;
+          margin-top: 20px;
+          font-family: 'Dancing Script', cursive;
+          font-size: 30px;
+          font-style: bold;
+        }
+        .bendicion-container p {
+          margin: 0;
+        }
+        .bendicion-container i {
+              margin-right: 5px;
+        }
+
+
+        /* estilos para los nombres*/
+        .blessing-container {
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .blessing-container h3 {
+        font-size: 24px;
+        margin-bottom: 5px; /* Agrega un margen inferior para separar los nombres */
+    }
+
+    .blessing-container p {
+        font-size: 20px;
+    }
+        
+    .blessing-container i {
+        margin-left: 1px; /* Ajusta el espaciado entre el título y el icono según tus preferencias */
+        font-size: 20px; /* Ajusta el tamaño del icono según tus preferencias */
+    }
+
+        /* Estilos para la sección SALÓN */
+        .salon-section {
+
+              color: #004466;
+              padding: 20px;
+              border-radius: 10px;
+              text-align: center;
+              margin-top: 20px;
+        }
+
+        .salon-section h2 {
+            margin: 0;
+              font-size: 24px;
+              font-family: 'Merienda', cursive;
+        }
+
+    /* Estilos para la sección del mapa del salon*/
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .map-container {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #location-button {
+            background-color: #4aa3df;
+            border: none;
+        }
+
+        .img-novia-icon{
+            width: 50px;
+            height: 50px;
+
+        }
+
+         /* Estilos para la sección DRESS CODE */
+        .dress-code-section {
+            color: #004466;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dress-code-section h3 {
+            margin: 0;
+            font-size: 24px;
+            font-family: 'Merienda', cursive;
+        }
+        
+        .dress-code-section p {
+            font-size: 18px;
+            font-family: 'Noto Serif TC', serif;
+            margin-bottom: 10px;
+        }
+
+    
+        /* Estilos para el icono del Dress Code */
+        .dress-code-icon {
+            width: 150px;
+            height: 150px;
+        }
+        .dress-code-icon2 {
+            width: 44px;
+            height: 44px;
+        }
+
+
+        /* estilo para el aviso de ñiños*/
+
+        .sin-ninos-section {
+            color: #004466;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .sin-ninos-section h2 {
+            margin: 0;
+            font-size: 24px;
+            font-family:'Merienda', cursive;
+        }
+
+        .sin-ninos-section p {
+            font-size: 18px;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .child-icon {
+            width: 150px;
+            height: 150px;
+        }
+
+        /* Estilos para la nueva sección MESA DE REGALOS */
+        .mesa-de-regalos-section {
+            color: #004466; 
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mesa-de-regalos-section h2 {
+            margin: 0;
+            font-size: 24px;
+            font-family: 'Merienda', cursive;
+            
+        }
+
+        .mesa-de-regalos-section p {
+            font-size: 18px;
+            font-family: 'Noto Serif TC', serif;
+            margin-bottom: 10px;
+        }
+
+        .mesa-de-regalos-button {
+            background-color: #4aa3df;
+            border: none;
+            cursor: pointer;
+            padding: 8px 15px; /* Tamaño del botón más pequeño */
+            color: #ffffff;
+            font-size: 16px; /* Tamaño de fuente reducido */
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-family: 'Noto Serif TC', serif;
+            text-decoration: none;
+        }
+
+        .mesa-de-regalos-button:hover {
+            background-color: #0077b6;
+        }
+
+        .img-regalo{
+            width: 50px;
+            height: 50px;
+        }
+
+        .img-mesa{
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            border: 1px solid;
+        }
+
+        .img-separador{
+            width: 300px;
+            height: 200px;
+            
+        }
+
+        .separador-section {
+            height: 200px;
+            color: #004466;
+            border-radius: 10px;
+            text-align: center;
+            
+        }
+
+        /* Estilos para la sección de confirmación de asistencia */
+    .confirmation-form-container {
+        text-align: center;
+        margin-top: 20px;
+        color: #004466;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .confirmation-form-container p {
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: 'Merienda' , cursive;
+    }
+
+    .confirmation-form-container a {
+        text-decoration: none;
+    }
+
+    .confirmation-form-container button {
+        background-color: #4aa3df;
+        border: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        color: #ffffff;
+        font-size: 18px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-family: 'Noto Serif TC', serif;
+        transition: background-color 0.3s ease;
+    }
+
+    .confirmation-form-container button:hover {
+        background-color: #0077b6;
+    }
+
+    .img-calendar{
+        width: 50px;
+        height: 50px;
+    }
+
+    .img-cheque{
+        width: 50px;
+        height: 50px;
+    }
+
+       
+      
+
+        /* hacer que aparezcan las letras del header*/
+        /* Ocultar inicialmente los elementos con la clase "appear" */
+        .appear {
+            opacity: 0;
+          }
+
+      /* Mostrar los elementos con la clase "appear" con una animación */
+         .appear.show {
+             opacity: 1;
+            transition: opacity 1s ease-in-out;
+          }
+        
+        /* Estilos para el contenedor de la frase */
+.frase-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para el elemento con la clase "frase" que esta despues delheader */
+.img-frase-top{
+            width: 50px;
+            height: 50px;
+        }
+
+
+.frase {
+    opacity: 0; /* Establecemos la opacidad inicial en 0 */
+    font-family: 'Noto Serif TC', serif;
+    color: #5e5e5e;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+  /*  margin-top: 20px;*/
+    transition: opacity 1s ease-in-out; /* Agregamos una transición de opacidad */
+    }
+
+        /* circulitos de colores no permitidos*/
+    
+    .dress-code-paragraph {
+    display: inline;
+    position: relative;
+}
+
+.color-circle {
+    display: inline-block;
+    width: 0.9em; /* Ajusta el tamaño de los círculos */
+    height: 0.9em; /* Igual que el ancho para mantener la forma circular */
+    margin: 0 2px; /* Ajusta el espaciado entre los círculos */
+    border-radius: 50%;
+    border-color: #004466;
+    border-style: solid;
+}
+        
+
+        /* Estilos para la nueva sección */
+.reveal-text {
+    text-align: center;
+    padding: 5px 0;
+    background-color: #ffffff; /* Puedes ajustar el color de fondo según tus preferencias */
+  }
+
+  .reveal-text h2 {
+    font-size: 36px;
+    margin: 0;
+    margin-bottom: 10px;
+    color: #5e5e5e;
+  }
+
+  .reveal-text p {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 28px;
+    margin: 0;
+    color: #5e5e5e;
+  }
+
+  .thank-you{
+    background: linear-gradient(rgba(245, 245, 220, 0.75), rgba(245, 245, 220, 0.75)), url("source/image3.JPG") no-repeat center center;
+    
+    background-position: center center;
+    border: #ffffff;
+    text-align: center;
+    height: 300px;
+    width: auto;
+    
+  }
+
+  .thank-you p{
+    text-align: center;
+    padding: 5em 0;
+    font-style: bold;
+    font-size: 21px;
+  }
+
+@media screen and (max-width: 768px) {
+  #po-content h1 {
+    font-size: 36px;
+  }
+
+  #title {
+    font-size: 36px !important;
+  }
+
+  #pause-button,
+  #play-button {
+    color: #004466;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #title {
+    font-size: 50px !important;
+    text-align: center;
+  }
+}	   
+
+.petalo {
+  position: fixed;
+  top: -50px;
+  font-size: 24px;
+  animation: caer 10s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes caer {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}	    
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+</head>
+<body>
+	
+	
+    <div id="popup">
+  <div id="popup-content" style="
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+  ">
+    <h1 style="
+      color: #004466;
+      font-size: 60px;
+      font-family: 'Pinyon Script', cursive;
+      margin: 0;
+      line-height: 1.2;
+    ">
+      ¡Bienvenido a nuestra invitación de boda!
+    </h1>
+    <button id="accept-button">Iniciar invitación</button>
+  </div>
+</div>
+		
+    </div>
+    <header class="appear">
+      <div id="content">
+          <h1 id="title" class="appear" style="
+  		font-family: 'Pinyon Script', cursive;
+  		font-size: 80px;
+  		color: #ffffff;
+  		text-shadow: -5px 3px 3px #808080;
+  		margin: 0;
+		">
+  		Alexandra y Alejandro
+	  </h1>
+        <h2 class="appear" style="color: #fef5ee; font-size: 26px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">¡NOS CASAMOS!</h2> 
+    
+
+      </div>
+    </header>
+	
+      <button id="pause-button">⏸️</button>
+      <button id="play-button">▶️</button>
+    
+
+    <div class="contador-content">
+    <h3 style="color: #004466; font-size: 40px; font-family: 'Pinyon Script', cursive">04 - 10 - 2025</h3>
+    
+    <p style="color: #004466; font-size: 24px;  font-family: 'Noto Serif TC', serif">LLEGÓ EL DÍA DE DECIRNOS SÍ PARA TODA LA VIDA...</p>
+    <p style="color: #004466; font-size: 24px;  font-family: 'Noto Serif TC', serif">FALTA POCO:</p>
+	    <img class="contador-img" src="source/me-gusta.png" alt="Dress Code Icon"><br>
+
+    <table width="40%">
+        <tr>
+            <td style="color: #0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif"><span id="days"></span></td>
+            <td style="color: #0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="hours"></span></td>
+            <td style="color: #0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="minutes"></span></td>
+            <td style="color: #0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif"><span id="seconds"></span></td>
+        </tr>
+        <tr id="countdown-labels">
+            <th style="color: #0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif">Días</th>
+            <th style="color:#0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif">Horas</th>
+            <th style="color: #0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif">Minutos</th>
+            <th style="color: #0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif">Segundos</th>
+        </tr>
+    </table>
+</div>
+
+
+    
+    <div class="frase-container">
+        <div class="frase" id="frase">
+            
+        </div>
+    </div>
+    <!-- Carrusel de imágenes -->
+    <div class="carousel">
+      <!-- Imágenes del carrusel -->
+      <div class="carousel-inner">
+          <img class="carousel-image active" src="source/image1.jpg" alt="">
+          <img class="carousel-image" src="source/image1.jpg" alt="">
+          <img class="carousel-image" src="source/image2.jpg" alt="">
+          <img class="carousel-image" src="source/image3.jpg" alt="">
+          <img class="carousel-image" src="source/image1.jpg" alt="">
+          <img class="carousel-image" src="source/image2.jpg" alt="">
+          <img class="carousel-image" src="source/image3.jpg" alt="">
+          <img class="carousel-image" src="source/image1.jpg" alt="">
+          <img class="carousel-image" src="source/image2.jpg" alt="">
+          <img class="carousel-image" src="source/image3.jpg" alt="">
+          <img class="carousel-image" src="source/image1.jpg" alt="">
+          <img class="carousel-image" src="source/image2.jpg" alt="">
+          <img class="carousel-image" src="source/image3.jpg" alt="">
+          <img class="carousel-image" src="source/image1.jpg" alt="">
+          <img class="carousel-image" src="source/image2.jpg" alt="">
+          <img class="carousel-image" src="source/image3.jpg" alt="">
+          <img class="carousel-image" src="source/image1.jpg" alt="">
+          <img class="carousel-image" src="source/image2.jpg" alt="">
+          <img class="carousel-image" src="source/image3.jpg" alt="">
+          <img class="carousel-image" src="source/image1.jpg" alt="">
+          <img class="carousel-image" src="source/image2.jpg" alt="">
+          <img class="carousel-image" src="source/image3.jpg" alt="">
+          <img class="carousel-image" src="source/image1.jpg" alt="">
+          <img class="carousel-image" src="source/image2.jpg" alt="">
+          <img class="carousel-image" src="source/image3.jpg" alt="">
+          <img class="carousel-image" src="source/image1.jpg" alt="">
+          <img class="carousel-image" src="source/image2.jpg" alt="">
+          <img class="carousel-image" src="source/image3.jpg" alt="">
+          <!-- Agrega las demás imágenes aquí -->
+      </div>
+
+      <!-- Botones del carrusel -->
+      <button class="carousel-button left"><</button>
+      <button class="carousel-button right">></button>
+    </div>
+
+      <!--titulo ceremonia-->
+      <div class="tituloceremony-container">
+        <img class="img-ceremony" src="source/iglesia.png" alt="Iglesia">
+        <h2>CEREMONIA</h2>
+     </div>
+    
+    <!--info ceremonia-->
+   <!--aqui habia un spacer-->
+    <div class="container">
+  <div class="image-container">
+    <img src="source/capilla1.jpg" alt="Capilla">
+  </div>
+  <div class="map-container">
+    <p class="centered-paragraph">
+      <h2><i class="fas fa-map-marker-alt"></i> DIRECCIÓN</h2>
+      *Parroquia Nuestra Señora del Carmen (San José)<br>
+      *Av. Circunvalar – Cra. 13 # 15-50 – Pereira<br> 
+      *Pereira, Risaralda<br>
+      *Hora: 4:30 p.m.
+    </p>
+    <div class="button-container">
+      <a href="https://maps.app.goo.gl/dkd2J4SmuF1ACJMC7" target="_blank">
+        <button id="location-button" class="centered-paragraph">Ver la Ubicación</button>
+      </a>
+    </div>
+  </div>
+</div>
+
+ <!--Separador de divs-->
+ <div class="separador-section">
+    <img class="img-separador" src="source/separador.png" alt="separador">
+</div>
+
+    <main>
+        
+      <!-- Contenido principal de la página -->
+       <!-- Bendicion -->
+        <div class="bendicion-container">
+              <p>CON LA BENDICIÓN DE NUESTROS PADRES:</p>
+        </div>
+
+        <div class="blessing-container">
+            <img class="contador-img" src="source/novia.png" alt="novia">
+    <h3>PAPÁS DE LA NOVIA</h3>
+    <p>Jose Reinaldo Muñoz<br>Blanca Ercibelia Buitrago <i class="fas fa-cross"></i></p>
+
+            <img class="contador-img" src="source/novio.png" alt="novio">
+    <h3>PAPÁS DEL NOVIO</h3>
+    <p>Alvaro Román Saavedra<br>Luz Amparo Villegas Uribe </p>
+</div>
+
+
+
+</div>
+
+    <main>
+        
+      <!-- Contenido principal de la página -->
+       <!-- Bendicion -->
+        <div class="bendicion-container">
+              <p>PADRINOS DE BODAS:</p>
+        </div>
+
+        <div class="blessing-container">
+            <img class="contador-img" src="source/novia.png" alt="novia">
+    <h3>Paula</h3>
+    
+            <img class="contador-img" src="source/novio.png" alt="novio">
+    <h3>Gustavo</h3>
+    
+</div>
+
+    </main>
+ <!--Separador de divs-->
+ <div class="separador-section">
+    <img class="img-separador" src="source/separador.png" alt="separador">
+</div>
+
+    <!-- Salon -->
+    <div class="salon-section">
+        <h2 style="text-align: center;">SALÓN</h2>
+    </div>
+    
+    <div class="image-container">
+         <img src="source/Salonint.jpeg" alt="Salón">
+    </div>
+    
+    <div class="container">
+    <div class="map-container">
+        <p class="centered-paragraph">
+            <h2>Faraón Hotel Club Campestre</h2>
+            Manzana 8 Casa 8a, Barrio La Sultana, Dosquebradas, Risaralda<br>
+            Hora: 7:00 p.m.
+        </p>
+        <div class="button-container">
+            <a href="https://goo.gl/maps/hoHYFeryaqmW5xgi7" target="_blank">
+                <button id="location-button" class="centered-paragraph">Ver Ubicación</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!-- Sección DRESS CODE -->
+<div class="dress-code-section">
+    <h3>DRESS CODE</h3>
+    <h3>FORMAL</h3><br>
+    <p class="centered-paragraph dress-code-paragraph">
+        <img class="dress-code-icon" src="source/formal.png" alt="Dress Code Icon"><br>
+        
+    </p>
+</div>
+      
+     <!--Separador de divs-->
+     <div class="separador-section">
+        <img class="img-separador" src="source/separador.png" alt="separador">
+    </div>
+
+    <!-- Nueva sección MESA DE REGALOS -->
+    <div class="mesa-de-regalos-section">
+        <h2>REGALOS</h2>
+        <p>Nuestro mejor regalo es que estés con nosotros en nuestro día, pero si quieres hacernos un obsequio te compartimos la siguiente opcion:</p>
+        <img class="img-regalo"  src="source/regalo.png" alt="regalo"><br>
+    </div>
+</div>
+    <main>
+        
+      <!-- Contenido principal de la página -->
+       <!-- Bendicion -->
+        <div class="bendicion-container">
+              <p>LLUVIA DE SOBRES</p>
+        </div>
+
+</div>
+   
+
+    <!-- enlace al formulario -->
+<div class="confirmation-form-container">
+    <img class="img-cheque" src="source/cheque.png" alt="cheque"><br>
+    <p>¡Confirma tu asistencia!</p> <br>
+    <a href="https://forms.gle/UFDTfqem1hEhVhZv6" target="_blank">
+        <button>Confirmar Asistencia</button>
+    </a>
+</div>
+ <!-- Nueva sección AGREGAR AL CALENDARIO -->
+<div id="agregar-al-calendario-section" class="confirmation-form-container">
+    <img class="img-calendar" src="source/calendario.png" alt="Calendario">
+    <p>Agrega nuestra boda a tu calendario:</p><br>
+    <button id="agregar-al-calendario-button">Agregar al Calendario</button>
+</div>
+
+<div class="thank-you">
+    <p>¡GRACIAS POR SER PARTE<br>
+    DEL MEJOR DÍA<br>
+    DE NUESTRAS VIDAS!</p>
+</div>
+
+    <div class="reveal-text">
+  <h2>Alexandra & Aleajandro</h2>
+  <p>04 — 10 — 2025</p>
+</div>
+    
+        <!-- Información de la boda -->
+
+    <script>
+      // Código JavaScript para mostrar el mensaje emergente y reproducir la música
+      window.onload = function() {
+          document.getElementById("popup").style.display = "flex";
+      }
+
+      var audio = new Audio("source/cancion1.mp3");
+
+      document.getElementById("accept-button").onclick = function() {
+          document.getElementById("popup").style.display = "none";
+          audio.play();
+          document.getElementById("pause-button").style.display = "block";
+          
+      }
+
+      document.getElementById("pause-button").onclick = function() {
+          audio.pause();
+          document.getElementById("pause-button").style.display = "none";
+          document.getElementById("play-button").style.display = "block";
+      }
+
+      document.getElementById("play-button").onclick = function() {
+          audio.play();
+          document.getElementById("play-button").style.display = "none";
+          document.getElementById("pause-button").style.display = "block";
+      }
+
+        document.addEventListener("DOMContentLoaded", function () {
+    // Obtén el botón "Aceptar" y los elementos con la clase "appear"
+    const btnAceptar = document.getElementById("accept-button");
+    const elementsToAppear = document.querySelectorAll(".appear");
+
+    // Agrega un controlador de eventos al botón "Aceptar"
+    btnAceptar.addEventListener("click", function () {
+      // Agrega la clase "show" a los elementos con la clase "appear" después de un pequeño retraso
+      elementsToAppear.forEach((element, index) => {
+        setTimeout(() => {
+          element.classList.add("show");
+        }, 300 * index); // Ajusta el valor del retraso (en milisegundos) para cambiar la secuencia de aparición
+      });
+    });
+  });
+        // Función para verificar si el elemento está visible en la ventana del navegador
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Función que maneja el efecto de desvanecimiento cuando el elemento es visible
+function fadeInOnScroll() {
+    const fraseElement = document.getElementById("frase");
+
+    function fadeIn() {
+        let opacity = 0;
+        const targetOpacity = 1;
+        const duration = 1000; // Duración de la animación en milisegundos
+        const interval = 50; // Intervalo de tiempo para actualizar la opacidad (ms)
+        const increment = (targetOpacity / (duration / interval));
+
+        const intervalId = setInterval(function() {
+            if (opacity <= targetOpacity) {
+                fraseElement.style.opacity = opacity;
+                opacity += increment;
+            } else {
+                clearInterval(intervalId);
+            }
+        }, interval);
+    }
+
+    function handleScroll() {
+        if (isElementInViewport(fraseElement)) {
+            fadeIn();
+            window.removeEventListener("scroll", handleScroll);
+        }
+    }
+
+    // Agregar evento de desplazamiento para activar el efecto de desvanecimiento
+    window.addEventListener("scroll", handleScroll);
+}
+
+// Esperar a que la página esté completamente cargada para agregar el evento de desplazamiento
+window.addEventListener("load", fadeInOnScroll);
+
+
+  // Código JavaScript para detener la música al hacer clic en los enlaces
+  var links = document.querySelectorAll("a");
+
+  links.forEach(link => {
+    link.addEventListener("click", function() {
+      audio.pause();
+      document.getElementById("pause-button").style.display = "none";
+      document.getElementById("play-button").style.display = "block";
+    });
+  });
+
+
+        
+      // Código JavaScript para el carrusel de imágenes
+      var slideIndex = 0;
+      var slides = document.querySelectorAll(".carousel-image");
+      var leftButton = document.querySelector(".carousel-button.left");
+      var rightButton = document.querySelector(".carousel-button.right");
+
+      // Función para mostrar el slide actual
+      function showSlide() {
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
+      }
+
+      // Función para avanzar al siguiente slide
+      function nextSlide() {
+        slides[slideIndex].style.display = "none";
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+          slideIndex = 0;
+        }
+        slides[slideIndex].style.display = "block";
+      }
+
+      // Función para retroceder al slide anterior
+      function prevSlide() {
+        slides[slideIndex].style.display = "none";
+        slideIndex--;
+        if (slideIndex < 0) {
+          slideIndex = slides.length - 1;
+        }
+        slides[slideIndex].style.display = "block";
+      }
+
+      // Avanzar automáticamente cada 10 segundos
+      setInterval(nextSlide, 10000);
+
+      // Mostrar el primer slide al cargar la página
+      showSlide();
+
+      // Agregar eventos a los botones del carrusel
+      leftButton.addEventListener("click", prevSlide);
+      rightButton.addEventListener("click", nextSlide);
+        
+     // Código JavaScript para la cuenta regresiva
+        const countdownElement = document.getElementById('countdown-timer');
+        const weddingDate = new Date('October 4, 2025 18:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Actualizar las celdas de la tabla con los valores de la cuenta regresiva
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+
+            if (distance < 0) {
+                countdownElement.textContent = "¡Ha llegado el día de nuestra boda!";
+                document.getElementById('countdown-labels').style.display = 'none';
+            } else {
+                document.getElementById('countdown-labels').style.display = 'table-row';
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        //calendario
+
+        document.getElementById("agregar-al-calendario-button").onclick = function() {
+    // Formatear la fecha de inicio y fin para el evento
+    const startDate = new Date('2023-10-21T18:00:00');
+    const endDate = new Date('2023-10-21T23:00:00');
+
+    // Crear la URL para agregar el evento al calendario (Google Calendar y otros)
+    const googleCalendarLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=Boda+Martha+y+Ricardo&dates=${startDate.toISOString().replace(/-|:|\.\d+/g, "")}/${endDate.toISOString().replace(/-|:|\.\d+/g, "")}&details=¡No+te+pierdas+nuestra+boda!&location=Parroquia+de+Nuestra+Señora+de+Guadalupe,+AV.+Tepeyac+550,+Col:+Chapalita,+Guadalajara,+Jalisco`;
+
+    // Enlace para dispositivos iOS (iPhone, iPad)
+    const iOsCalendarLink = `webcal://www.google.com/calendar/event?text=Nuestra+Boda&dates=${startDate.toISOString().replace(/-|:|\.\d+/g, "")}/${endDate.toISOString().replace(/-|:|\.\d+/g, "")}&details=¡No+te+pierdas+nuestra+boda!&location=Parroquia+de+Nuestra+Señora+de+Guadalupe,+AV.+Tepeyac+550,+Col:+Chapalita,+Guadalajara,+Jalisco`;
+
+    // Intentar abrir primero el enlace para iOS y, si falla, abrir el enlace para otros dispositivos
+    const openInIos = () => {
+      window.open(iOsCalendarLink, "_blank");
+      window.location.href = googleCalendarLink;
+    };
+
+    // Intentar abrir el enlace para iOS
+    if (navigator.platform.match(/iPhone|iPad|iPod/)) {
+      // Verificar si es un dispositivo iOS (iPhone, iPad, iPod)
+      if (navigator.standalone) {
+        // Si la aplicación está en modo de pantalla completa (sin navegador), abrir el enlace en una nueva pestaña
+        openInIos();
+      } else {
+        // Si no está en modo de pantalla completa (con navegador), mostrar una ventana emergente con instrucciones
+        alert("Para agregar el evento a tu calendario, selecciona 'Abrir' cuando se te solicite abrir la aplicación Calendario.");
+      }
+    } else {
+      // Si no es un dispositivo iOS, abrir el enlace para otros dispositivos
+      window.open(googleCalendarLink, "_blank");
+    }
+  };
+ // Inicializar ScrollReveal al cargar la página
+     const sr = ScrollReveal({
+    origin: 'top',
+    distance: '20px',
+    duration: 2000,
+    delay: 500,
+  });
+
+  sr.reveal('.reveal-text', { interval: 200 });
+  sr.reveal('.frase-container', { interval: 200 });
+  sr.reveal('.contador-content', { interval: 200 });
+  sr.reveal('.carousel', { interval: 200 });
+        sr.reveal('.confirmation-form-container', { interval: 200 });
+        sr.reveal('.agregar-al-calendario-section', { interval: 200 });
+        sr.reveal('.confirmation-form-container', { interval: 200 });
+        sr.reveal('.mesa-de-regalos-section', { interval: 200 });
+        sr.reveal('.sin-ninos-section', { interval: 200 });
+        sr.reveal('.dress-code-section', { interval: 200 });
+        sr.reveal('.image-container', { interval: 200 });
+        sr.reveal('.salon-section', { interval: 200 });
+        sr.reveal('.blessing-container', { interval: 200 });
+        sr.reveal('.bendicion-container', { interval: 200 });
+        sr.reveal('.separador-section', { interval: 200 });
+        sr.reveal('.container', { interval: 200 });
+        sr.reveal('.tituloceremony-container', { interval: 200 });
+        sr.reveal('.thank-you', { interval: 200 });
+
+        
+        
+    </script>
+	
+<script>
+  // Crear pétalos aleatorios
+  const petalos = ["✨", "💮", "❀", "🌹", "❤️", "💖","💞","💓",];
+  setInterval(() => {
+    const petalo = document.createElement("div");
+    petalo.classList.add("petalo");
+    petalo.innerText = petalos[Math.floor(Math.random() * petalos.length)];
+    petalo.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(petalo);
+
+    setTimeout(() => {
+      petalo.remove();
+    }, 10000);
+  }, 300);
+</script>    
+
+</body>
+</html>
