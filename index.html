@@ -29,31 +29,25 @@
 
 	    
 	    /* Estilos para la página #ffe9da original */
-        body {
-  		margin: 0;
-  		padding: 0;
-  		min-height: 100vh;
-  		background-image: url("source/cover1.jpg");
-  		background-size: cover;
-  		background-position: center;
-  		background-repeat: no-repeat;
-  		background-attachment: scroll;
-  		font-family: 'Noto Serif TC', serif;
-  		color: #004466;
-	}
+       body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background: url("source/cover1.jpg") no-repeat center center fixed;
+        background-size: cover;
+        font-family: 'Noto Serif TC', serif;
+    }
 	    
         header {
-             
-	     
-             
-             height: 100vh;
-             display: flex;
-             flex-direction: column;
-             align-items: center;
-             justify-content: center;
-             text-align: center;
-             color: rgba(255,255,255,0.6);
-        }
+        background: transparent; /* Fondo transparente para que se vea el del body */
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white; /* Ajusta el color del texto para que sea legible */
+    }
         #content {
             padding: 20px;
         }
