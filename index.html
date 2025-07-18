@@ -1175,8 +1175,8 @@ window.addEventListener("load", fadeInOnScroll);
 
         document.getElementById("agregar-al-calendario-button").onclick = function() {
     // Formatear la fecha de inicio y fin para el evento
-    const startDate = new Date('2023-10-21T18:00:00');
-    const endDate = new Date('2023-10-21T23:00:00');
+    const startDate = new Date('2025-10-04T18:00:00');
+    const endDate = new Date('2025-10-04T23:00:00');
 
     // Crear la URL para agregar el evento al calendario (Google Calendar y otros)
     const googleCalendarLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=Boda+Martha+y+Ricardo&dates=${startDate.toISOString().replace(/-|:|\.\d+/g, "")}/${endDate.toISOString().replace(/-|:|\.\d+/g, "")}&details=¡No+te+pierdas+nuestra+boda!&location=Parroquia+de+Nuestra+Señora+de+Guadalupe,+AV.+Tepeyac+550,+Col:+Chapalita,+Guadalajara,+Jalisco`;
