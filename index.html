@@ -1167,31 +1167,30 @@ window.addEventListener("load", fadeInOnScroll);
         const countdownElement = document.getElementById('countdown-timer');
         const weddingDate = new Date('October 4, 2025 18:00:00').getTime();
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Actualizar las celdas de la tabla con los valores de la cuenta regresiva
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = hours;
+    document.getElementById('minutes').textContent = minutes;
+    document.getElementById('seconds').textContent = seconds;
 
-            if (distance < 0) {
-                countdownElement.textContent = "¡Ha llegado el día de nuestra boda!";
-                document.getElementById('countdown-labels').style.display = 'none';
-            } else {
-                document.getElementById('countdown-labels').style.display = 'table-row';
-            }
-        }
+    if (distance < 0) {
+        countdownElement.textContent = "¡Ha llegado el día de nuestra boda!";
+        document.getElementById('countdown-labels').style.display = 'none';
+    } else {
+        document.getElementById('countdown-labels').style.display = 'table-row';
+    }
+}
 
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
         //calendario
 
