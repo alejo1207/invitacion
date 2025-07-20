@@ -798,6 +798,53 @@
     opacity: 0;
   }
 }	    
+    
+.calendar-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.calendar-button {
+  background-color: #4aa3df;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 30px;
+  font-family: 'Noto Serif TC', serif;
+  transition: background-color 0.3s ease;
+}
+
+.calendar-button:hover {
+  background-color: #0077b6;
+}
+
+.calendar-options {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-options a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #004466;
+  font-family: 'Noto Serif TC', serif;
+}
+
+.calendar-options a:hover {
+  background-color: #f1f1f1;
+}
+	    
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1066,9 +1113,19 @@
 </div>
  <!-- Nueva sección AGREGAR AL CALENDARIO -->
 <div id="agregar-al-calendario-section" class="confirmation-form-container">
-    <img class="img-calendar" src="source/calendario.png" alt="Calendario">
-    <p>Agrega nuestra boda a tu calendario:</p><br>
-    <button id="accept-button1">Agregar al Calendario</button>
+  <img class="img-calendar" src="source/calendario.png" alt="Calendario">
+  <p>Agrega nuestra boda a tu calendario:</p><br>
+
+  <div class="calendar-dropdown">
+    <button class="calendar-button">Agendar</button>
+    <div class="calendar-options">
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Alexandra+y+Alejandro&dates=20251004T180000Z/20251004T230000Z&details=¡No+te+pierdas+nuestra+boda!&location=Parroquia+Nuestra+Señora+del+Carmen%2C+Pereira" target="_blank">Google</a>
+      <a href="https://outlook.live.com/calendar/0/deeplink/compose?subject=Boda+Alexandra+y+Alejandro&body=¡No+te+pierdas+nuestra+boda!&startdt=2025-10-04T18:00:00&enddt=2025-10-04T23:00:00&location=Parroquia+Nuestra+Señora+del+Carmen%2C+Pereira" target="_blank">Outlook.com</a>
+      <a href="https://outlook.office.com/calendar/0/deeplink/compose?subject=Boda+Alexandra+y+Alejandro&body=¡No+te+pierdas+nuestra+boda!&startdt=2025-10-04T18:00:00&enddt=2025-10-04T23:00:00&location=Parroquia+Nuestra+Señora+del+Carmen%2C+Pereira" target="_blank">Office 365</a>
+      <a href="webcal://www.google.com/calendar/event?text=Boda+Alexandra+y+Alejandro&dates=20251004T180000Z/20251004T230000Z&details=¡No+te+pierdas+nuestra+boda!&location=Parroquia+Nuestra+Señora+del+Carmen%2C+Pereira">Apple Calendar</a>
+      <a href="#">Yahoo (no disponible)</a>
+    </div>
+  </div>
 </div>
 
 <section id="hashtag" class="azul-oscuro" style="text-align: center; padding: 60px 20px;">
@@ -1365,5 +1422,18 @@ window.addEventListener("load", fadeInOnScroll);
   }, 300);
 </script>    
 
+document.querySelector(".calendar-button").addEventListener("click", function () {
+    const options = document.querySelector(".calendar-options");
+    options.style.display = options.style.display === "block" ? "none" : "block";
+  });
+
+  // Cerrar menú si se hace clic fuera
+  document.addEventListener("click", function (event) {
+    const dropdown = document.querySelector(".calendar-dropdown");
+    if (!dropdown.contains(event.target)) {
+      document.querySelector(".calendar-options").style.display = "none";
+    }
+  });	    
+	    
 </body>
 </html>
