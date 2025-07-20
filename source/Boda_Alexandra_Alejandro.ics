@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//AlejandroRomán//Boda//ES
+BEGIN:VEVENT
+UID:1753035425.856683@bodacalendario
+DTSTAMP:20250720T181705Z
+DTSTART;TZID=America/Bogota:20251004T163000
+DTEND;TZID=America/Bogota:20251005T030000
+SUMMARY:Boda Alexandra y Alejandro
+DESCRIPTION:¡No te pierdas nuestra boda! Acompáñanos en este día tan especial.
+LOCATION:Parroquia Nuestra Señora del Carmen, Pereira
+END:VEVENT
+END:VCALENDAR
