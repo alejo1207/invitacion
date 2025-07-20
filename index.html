@@ -156,7 +156,29 @@
             width: 30px;
         }
 
+	.contador-marco {
+  		background-image: url("source/marco-contador.png");
+ 		background-size: contain;
+  		background-repeat: no-repeat;
+  		background-position: center;
+  		width: 250px;
+  		height: 250px;
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+  		margin: 20px auto;
+  		position: relative;
+	}
 
+	.contador-interno {
+  		width: 150px;
+  		height: 150px;
+  		text-align: center;
+  		display: flex;
+  		flex-direction: column;
+  		justify-content: center;
+  		font-family: 'Noto Serif TC', serif;
+	}	    
 
         /* Estilos para el carrusel */
 
@@ -768,28 +790,30 @@
       <button id="pause-button">⏸️</button>
 
     <div class="contador-content">
-    <h3 style="color: #004466; font-size: 40px; font-family: 'Pinyon Script', cursive">04 - 10 - 2025</h3>
-    
-    <p style="color: #004466; font-size: 24px;  font-family: 'Noto Serif TC', serif">LLEGÓ EL DÍA DE DECIRNOS SÍ PARA TODA LA VIDA...</p>
-    <p style="color: #004466; font-size: 24px;  font-family: 'Noto Serif TC', serif">FALTA POCO:</p>
-	    <img class="contador-img" src="source/me-gusta.png" alt="Dress Code Icon"><br>
+  <h3 style="color: #004466; font-size: 40px; font-family: 'Pinyon Script', cursive">04 - 10 - 2025</h3>
+  <p style="color: #004466; font-size: 24px; font-family: 'Noto Serif TC', serif">LLEGÓ EL DÍA DE DECIRNOS SÍ PARA TODA LA VIDA...</p>
+  <p style="color: #004466; font-size: 24px; font-family: 'Noto Serif TC', serif">FALTA POCO:</p>
 
-    <table width="40%">
+  <div class="contador-marco">
+    <div class="contador-interno">
+      <p style="margin: 0; font-weight: bold;">Falta</p>
+      <table style="width: 100%;">
         <tr>
-            <td style="color: #0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif"><span id="days"></span></td>
-            <td style="color: #0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="hours"></span></td>
-            <td style="color: #0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="minutes"></span></td>
-            <td style="color: #0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif"><span id="seconds"></span></td>
+          <td><span id="days">--</span></td>
+          <td><span id="hours">--</span></td>
+          <td><span id="minutes">--</span></td>
+          <td><span id="seconds">--</span></td>
         </tr>
-        <tr id="countdown-labels">
-            <th style="color: #0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif">Días</th>
-            <th style="color:#0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif">Horas</th>
-            <th style="color: #0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif">Minutos</th>
-            <th style="color: #0077b6; font-size: 22px;  font-family: 'Noto Serif TC', serif">Segundos</th>
+        <tr style="font-size: 10px;">
+          <td>DÍAS</td>
+          <td>HS</td>
+          <td>MIN</td>
+          <td>SEG</td>
         </tr>
-    </table>
+      </table>
+    </div>
+  </div>
 </div>
-
 
     
     <div class="frase-container">
