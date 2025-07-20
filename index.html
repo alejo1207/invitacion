@@ -1422,18 +1422,19 @@ window.addEventListener("load", fadeInOnScroll);
   }, 300);
 </script>    
 
+<script>
 document.querySelector(".calendar-button").addEventListener("click", function () {
-    const options = document.querySelector(".calendar-options");
-    options.style.display = options.style.display === "block" ? "none" : "block";
-  });
+  const options = document.querySelector(".calendar-options");
+  options.style.display = options.style.display === "block" ? "none" : "block";
+});
 
-  // Cerrar menú si se hace clic fuera
-  document.addEventListener("click", function (event) {
-    const dropdown = document.querySelector(".calendar-dropdown");
-    if (!dropdown.contains(event.target)) {
-      document.querySelector(".calendar-options").style.display = "none";
-    }
-  });	    
+document.addEventListener("click", function (event) {
+  const dropdown = document.querySelector(".calendar-dropdown");
+  if (!dropdown.contains(event.target)) {
+    document.querySelector(".calendar-options").style.display = "none";
+  }
+});
+</script>
 	    
 </body>
 </html>
