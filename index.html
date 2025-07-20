@@ -157,28 +157,66 @@
         }
 
 	.contador-marco {
-  		background-image: url("source/marco-contador.png");
- 		background-size: contain;
-  		background-repeat: no-repeat;
-  		background-position: center;
-  		width: 300px;
-  		height: 300px;
-  		display: flex;
-  		align-items: center;
-  		justify-content: center;
-  		margin: 20px auto;
-  		position: relative;
-	}
+    background-image: url("source/marco-contador.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    position: relative;
+  }
 
-	.contador-interno {
-  		width: 150px;
-  		height: 150px;
-  		text-align: center;
-  		display: flex;
-  		flex-direction: column;
-  		justify-content: center;
-  		font-family: 'Noto Serif TC', serif;
-	}	    
+  .contador-interno {
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Noto Serif', serif;
+  }
+
+  .contador-interno span {
+    color: #0055aa;         /* Azul */
+    font-style: italic;     /* Cursiva */
+    font-weight: bold;      /* Negrita */
+    font-size: 32px;        /* Tamaño grande */
+    font-family: 'Noto Serif', serif;
+  }
+
+  .contador-interno table {
+    width: 100%;
+  }
+
+  .contador-interno table tr:last-child td {
+    font-size: 14px;        /* Tamaño de texto bajo los números */
+  }
+
+  @media screen and (max-width: 600px) {
+    .contador-marco {
+      width: 220px;
+      height: 220px;
+      margin: 20px auto;
+    }
+
+    .contador-interno {
+      width: 130px;
+      height: 130px;
+      font-size: 12px;
+    }
+
+    .contador-interno span {
+      font-size: 24px;
+    }
+
+    .contador-interno table tr:last-child td {
+      font-size: 12px;
+    }
+  }
 
         /* Estilos para el carrusel */
 
@@ -795,22 +833,23 @@
   <p style="color: #004466; font-size: 24px; font-family: 'Noto Serif TC', serif">FALTA POCO:</p>
 
   <div id="countdown-timer" class="contador-marco">
-  <div class="contador-interno">
-    <p style="margin: 0; font-weight: bold;">Falta</p>
-    <table style="width: 100%;">
-      <tr>
-        <td><span id="days">0</span></td>
-        <td><span id="hours">0</span></td>
-        <td><span id="minutes">0</span></td>
-        <td><span id="seconds">0</span></td>
-      </tr>
-      <tr style="font-size: 10px;">
-        <td>DÍAS</td>
-        <td>HS</td>
-        <td>MIN</td>
-        <td>SEG</td>
-      </tr>
-    </table>
+    <div class="contador-interno">
+      <p style="margin: 0; font-weight: bold;">Falta</p>
+      <table>
+        <tr>
+          <td><span id="days">--</span></td>
+          <td><span id="hours">--</span></td>
+          <td><span id="minutes">--</span></td>
+          <td><span id="seconds">--</span></td>
+        </tr>
+        <tr>
+          <td>DÍAS</td>
+          <td>HS</td>
+          <td>MIN</td>
+          <td>SEG</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>
     
