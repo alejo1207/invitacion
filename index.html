@@ -17,47 +17,40 @@
     <title>Invitación de Boda</title>
     <style>
 
-.flor-fija {
-  position: fixed;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.8;
+.flor-local {
+  position: absolute;
+  opacity: 0;
+  transition: all 1.5s ease;
   animation: flotar 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Esquina inferior izquierda */
-.esquina-izquierda {
-  bottom: 0;
-  left: 0;
-  width: 120px;
-}
-
-/* Esquina inferior derecha */
-.esquina-derecha {
-  bottom: 0;
-  right: 0;
-  width: 130px;
-}
-	    
-.flor-3 {
-  top: 250px;
-  right: -150px;
-  left: auto;
+.flor-izquierda {
+  left: -100px;
+  top: 80px;
   width: 100px;
 }
 
-.flor-4 {
-  top: 800px;
-  right: -150px;
-  left: auto;
-  width: 110px;
+.flor-derecha {
+  right: -100px;
+  top: 160px;
+  width: 100px;
 }
 
-/* Cuando aparecen al hacer scroll (lado derecho) */
-.flor-3.flor-visible,
-.flor-4.flor-visible {
-  right: 20px;
+.flor-local.visible {
   opacity: 1;
+  transform: translateX(80px);
+}
+
+.flor-derecha.visible {
+  transform: translateX(-80px);
+}
+
+@keyframes flotar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+  100% { transform: translateY(0); }
 }
 	    
 	@keyframes flotar {
@@ -66,60 +59,7 @@
   100% { transform: translateY(0); }
 }
 
-.flor-scroll {
-  position: fixed;
-  opacity: 0;
-  transition: all 1.8s ease;
-  z-index: 0;
-  pointer-events: none;
-  animation: flotar 6s ease-in-out infinite;
-  transform: translateX(0); /* estado inicial */
-}
 
-/* IZQUIERDA */
-.flor-1 {
-  top: 300px;
-  left: -150px;
-  width: 110px;
-}
-
-.flor-2 {
-  top: 700px;
-  left: -150px;
-  width: 100px;
-}
-
-/* DERECHA */
-.flor-3 {
-  top: 400px;
-  right: -150px;
-  left: auto;
-  width: 100px;
-}
-
-.flor-4 {
-  top: 800px;
-  right: -150px;
-  left: auto;
-  width: 110px;
-}
-
-/* Clase que se aplica con scroll */
-.flor-visible {
-  opacity: 1;
-  transform: translateX(170px); /* desliza desde izquierda */
-}
-
-.flor-3.flor-visible,
-.flor-4.flor-visible {
-  transform: translateX(-170px); /* desliza desde derecha */
-}
-
-/* Añadir delay de entrada para cada flor */
-.flor-1 { transition-delay: 0s; }
-.flor-2 { transition-delay: 0.3s; }
-.flor-3 { transition-delay: 0.6s; }
-.flor-4 { transition-delay: 0.9s; }
 
   	    /* Estilos para la página #ffe9da original */
         body {
@@ -1015,11 +955,7 @@
       </div>
     </header>
 	
-<!-- Flores decorativas animadas al hacer scroll -->
-<img src="source/Flor1.webp" class="flor-scroll flor-1" alt="Flor izquierda 1">
-<img src="source/Flor2.webp" class="flor-scroll flor-2" alt="Flor izquierda 2">
-<img src="source/Flor1.webp" class="flor-scroll flor-3" alt="Flor derecha 1">
-<img src="source/Flor2.webp" class="flor-scroll flor-4" alt="Flor derecha 2">	
+	
       
       <button id="play-button">▶️</button>
       <button id="pause-button">⏸️</button>
@@ -1098,6 +1034,8 @@
       <div class="tituloceremony-container">
         <img class="img-ceremony" src="source/iglesia.png" alt="Iglesia">
         <h2>CEREMONIA</h2>
+	<img src="source/Flor1.webp" class="flor-local flor-izquierda" alt="Flor izquierda">
+        <img src="source/Flor2.webp" class="flor-local flor-derecha" alt="Flor derecha">      
      </div>
     
     <!--info ceremonia-->
@@ -1568,35 +1506,26 @@ document.addEventListener("click", function (event) {
     document.querySelector(".calendar-options").style.display = "none";
   }
 });
-</script>
 
-<!-- Flores decorativas con scroll desde la izquierda -->
-<img src="source/Flor1.webp" class="flor-scroll flor-1" alt="Flor izquierda 1">
-<img src="source/Flor2.webp" class="flor-scroll flor-2" alt="Flor izquierda 2">
-
-<script>
-  function mostrarFloresAlHacerScroll() {
-    const flores = document.querySelectorAll('.flor-scroll');
-    const scrollTrigger = 500;
-
-    if (window.scrollY > scrollTrigger) {
-      flores.forEach(flor => {
-        if (!flor.classList.contains('flor-visible')) {
-          flor.classList.add('flor-visible');
-        }
-      });
-    }
-  }
-
-  window.addEventListener('scroll', mostrarFloresAlHacerScroll);
-  window.addEventListener('load', mostrarFloresAlHacerScroll);
-</script>
 
 <!-- Flores decorativas desde el lado derecho -->
 <img src="source/Flor1.webp" class="flor-scroll flor-3" alt="Flor derecha 1">
 <img src="source/Flor2.webp" class="flor-scroll flor-4" alt="Flor derecha 2">	    
 
+<script>
+  function mostrarFloresLocalmente() {
+    const flores = document.querySelectorAll('.flor-local');
+    flores.forEach(flor => {
+      const top = flor.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        flor.classList.add('visible');
+      }
+    });
+  }
 
+  window.addEventListener('scroll', mostrarFloresLocalmente);
+  window.addEventListener('load', mostrarFloresLocalmente);
+</script>
 	    
 </body>
 </html>
