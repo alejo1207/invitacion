@@ -17,7 +17,35 @@
     <title>Invitación de Boda</title>
     <style>
 
+	@keyframes flotar {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-10px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(-1deg); }
+}
 
+.flor-animada {
+  width: 70px;
+  height: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+  animation: flotar 5s ease-in-out infinite;
+}
+
+.flor-animada.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 600px) {
+  .flor-animada {
+    width: 50px;
+    margin: 10px 0;
+  }
+}
+	    
   	    /* Estilos para la página #ffe9da original */
         body {
   		background: linear-gradient(135deg, #e6f2ff, #b3d9ff); /* Degradado azul claro */
@@ -973,16 +1001,16 @@
       <button class="carousel-button right">></button>
     </div>
 
-      <!--titulo ceremonia-->
-<div class="tituloceremony-container" style="display: flex; align-items: center; justify-content: center; gap: 20px;">
-    <img src="Flor1.webp" alt="Flor izquierda" style="width: 60px; height: auto;">
-    
-    <div style="text-align: center;">
-        <img class="img-ceremony" src="source/iglesia.png" alt="Iglesia">
-        <h2>CEREMONIA</h2>
-    </div>
+      <!--titulo ceremonia con flores animadas-->
+<div class="tituloceremony-container" style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+  <img src="source/Flor1.webp" alt="Flor izquierda" class="flor-animada flor-izquierda">
 
-    <img src="Flor2.webp" alt="Flor derecha" style="width: 60px; height: auto;">
+  <div style="text-align: center;">
+    <img class="img-ceremony" src="source/iglesia.png" alt="Iglesia">
+    <h2>CEREMONIA</h2>
+  </div>
+
+  <img src="source/Flor2.webp" alt="Flor derecha" class="flor-animada flor-derecha">
 </div>
     
     <!--info ceremonia-->
@@ -1454,6 +1482,24 @@ document.addEventListener("click", function (event) {
   }
 });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const flores = document.querySelectorAll(".flor-animada");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, {
+    threshold: 0.4,
+  });
+
+  flores.forEach(flor => observer.observe(flor));
+});
+</script>	    
 	    
 </body>
 </html>
