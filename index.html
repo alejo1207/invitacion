@@ -17,6 +17,81 @@
     <title>Invitación de Boda</title>
     <style>
 
+.flor-fija {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.8;
+  animation: flotar 6s ease-in-out infinite;
+}
+
+/* Esquina inferior izquierda */
+.esquina-izquierda {
+  bottom: 0;
+  left: 0;
+  width: 120px;
+}
+
+/* Esquina inferior derecha */
+.esquina-derecha {
+  bottom: 0;
+  right: 0;
+  width: 130px;
+}
+	    
+.flor-3 {
+  top: 250px;
+  right: -150px;
+  left: auto;
+  width: 100px;
+}
+
+.flor-4 {
+  top: 800px;
+  right: -150px;
+  left: auto;
+  width: 110px;
+}
+
+/* Cuando aparecen al hacer scroll (lado derecho) */
+.flor-3.flor-visible,
+.flor-4.flor-visible {
+  right: 20px;
+  opacity: 1;
+}
+	    
+	@keyframes flotar {
+ 	 0% { transform: translateY(0); }
+  	50% { transform: translateY(10px); }
+  	100% { transform: translateY(0); }
+	}
+
+	.flor-scroll {
+ 	 position: fixed;
+  	left: -150px; /* fuera de la pantalla */
+  	opacity: 0;
+  	transition: all 1.5s ease;
+	  z-index: 0;
+  	pointer-events: none;
+  	animation: flotar 5s ease-in-out infinite;
+	}
+
+	.flor-1 {
+  	 top: 160px;
+  	 width: 110px;
+	}
+
+	.flor-2 {
+ 	  top: 700px;
+ 	  width: 100px;
+	}
+
+	/* Se activa al hacer scroll */
+	.flor-visible {
+	  left: 20px;
+	  opacity: 1;
+	}    
+
 
   	    /* Estilos para la página #ffe9da original */
         body {
@@ -1448,6 +1523,33 @@ document.addEventListener("click", function (event) {
   }
 });
 </script>
+
+<!-- Flores decorativas con scroll desde la izquierda -->
+<img src="source/Flor1.webp" class="flor-scroll flor-1" alt="Flor izquierda 1">
+<img src="source/Flor2.webp" class="flor-scroll flor-2" alt="Flor izquierda 2">
+
+<script>
+  function mostrarFloresAlHacerScroll() {
+    const flores = document.querySelectorAll('.flor-scroll');
+    flores.forEach(flor => {
+      const top = flor.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        flor.classList.add('flor-visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', mostrarFloresAlHacerScroll);
+  window.addEventListener('load', mostrarFloresAlHacerScroll);
+</script>
+
+<!-- Flores decorativas desde el lado derecho -->
+<img src="source/Flor1.webp" class="flor-scroll flor-3" alt="Flor derecha 1">
+<img src="source/Flor2.webp" class="flor-scroll flor-4" alt="Flor derecha 2">	    
+
+<!-- Flores fijas decorativas en las esquinas -->
+<img src="source/Flor1.webp" class="flor-fija esquina-izquierda" alt="Flor fija izquierda">
+<img src="source/Flor2.webp" class="flor-fija esquina-derecha" alt="Flor fija derecha">
 	    
 </body>
 </html>
