@@ -1559,12 +1559,15 @@ document.addEventListener("click", function (event) {
 <script>
   function mostrarFloresAlHacerScroll() {
     const flores = document.querySelectorAll('.flor-scroll');
-    flores.forEach(flor => {
-      const top = flor.getBoundingClientRect().top;
-      if (top < window.innerHeight - 100) {
-        flor.classList.add('flor-visible');
-      }
-    });
+    const scrollTrigger = 500;
+
+    if (window.scrollY > scrollTrigger) {
+      flores.forEach(flor => {
+        if (!flor.classList.contains('flor-visible')) {
+          flor.classList.add('flor-visible');
+        }
+      });
+    }
   }
 
   window.addEventListener('scroll', mostrarFloresAlHacerScroll);
