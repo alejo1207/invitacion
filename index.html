@@ -1513,18 +1513,25 @@ document.addEventListener("click", function (event) {
 <img src="source/Flor2.webp" class="flor-scroll flor-4" alt="Flor derecha 2">	    
 
 <script>
-  function mostrarFloresLocalmente() {
+  function actualizarFloresVisibles() {
     const flores = document.querySelectorAll('.flor-local');
+
     flores.forEach(flor => {
-      const top = flor.getBoundingClientRect().top;
-      if (top < window.innerHeight - 100) {
+      const rect = flor.getBoundingClientRect();
+
+      // Verifica si la flor está dentro de la ventana visible
+      const visible = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (visible) {
         flor.classList.add('visible');
+      } else {
+        flor.classList.remove('visible');
       }
     });
   }
 
-  window.addEventListener('scroll', mostrarFloresLocalmente);
-  window.addEventListener('load', mostrarFloresLocalmente);
+  window.addEventListener('scroll', actualizarFloresVisibles);
+  window.addEventListener('load', actualizarFloresVisibles);
 </script>
 	    
 </body>
