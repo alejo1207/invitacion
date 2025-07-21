@@ -1206,7 +1206,70 @@
     	<a href="https://www.instagram.com/explore/tags/bodaalexayalejo/" target="_blank">
 	<button id="accept-button1">Compartir fotos y videos</button>
 
-	
+<!-- Muro de Dedicatorias -->
+<h2 style="text-align: center; margin-top: 40px;">💬 Muro de Dedicatorias</h2>
+
+<p style="text-align: center; max-width: 600px; margin: 0 auto 20px auto;">
+  Déjanos un mensaje especial para recordar este día contigo. ¡Nos encantará leerte!
+</p>
+
+<div style="max-width: 600px; margin: 0 auto;">
+  <iframe 
+    src="https://docs.google.com/forms/d/e/1FAIpQLSdq6F8s3G_mO06vWDV6061741Uzckiv4QJ36IgJ4aJ6CnQIpw/viewform?usp=dialog"
+    width="100%" 
+    height="500" 
+    frameborder="0" 
+    marginheight="0" 
+    marginwidth="0" 
+    style="border-radius: 12px;">
+    Cargando…
+  </iframe>
+</div>
+
+<!-- Visor de dedicatorias -->
+<h2 style="text-align: center; margin-top: 40px;">📝 Mensajes Recibidos</h2>
+
+<p style="text-align: center; max-width: 600px; margin: 0 auto 20px auto;">
+  Aquí puedes leer los mensajes hermosos que nos han dejado. ¡Gracias por tanto amor!
+</p>
+
+<div id="dedicatorias" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px;"></div>
+
+<script>
+  async function cargarDedicatorias() {
+    const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_u33re22CyW3i25VPxLGOnXlZ_IP-JOOhcun9yXmh-GQzmZ-zsBKqDsZYwb8mC4YtTYmOqri5IdL8/pub?gid=1662002446&single=true&output=csv";
+    const response = await fetch(url);
+    const data = await response.text();
+    const rows = data.split("\n").slice(1); // Omitir encabezados
+
+    const contenedor = document.getElementById("dedicatorias");
+
+    rows.forEach(row => {
+      const columnas = row.split(",");
+      const nombre = columnas[1]?.replace(/"/g, "").trim() || "Anónimo";
+      const mensaje = columnas[2]?.replace(/"/g, "").trim();
+
+      if (mensaje) {
+        const tarjeta = document.createElement("div");
+        tarjeta.style.padding = "20px";
+        tarjeta.style.borderRadius = "12px";
+        tarjeta.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+        tarjeta.style.background = "#fffbe6";
+        tarjeta.style.fontFamily = "Arial, sans-serif";
+        tarjeta.style.transition = "transform 0.3s ease";
+        tarjeta.onmouseover = () => tarjeta.style.transform = "scale(1.03)";
+        tarjeta.onmouseout = () => tarjeta.style.transform = "scale(1)";
+        tarjeta.innerHTML = `
+          <p style="font-style: italic;">"${mensaje}"</p>
+          <p style="text-align: right; font-weight: bold; margin-top: 10px;">— ${nombre}</p>
+        `;
+        contenedor.appendChild(tarjeta);
+      }
+    });
+  }
+
+  cargarDedicatorias();
+</script>
 		
 </section>
 <div class="thank-you">
