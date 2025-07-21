@@ -61,36 +61,59 @@
 }
 	    
 	@keyframes flotar {
- 	 0% { transform: translateY(0); }
-  	50% { transform: translateY(10px); }
-  	100% { transform: translateY(0); }
-	}
+  0% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+  100% { transform: translateY(0); }
+}
 
-	.flor-scroll {
- 	 position: fixed;
-  	left: -150px; /* fuera de la pantalla */
-  	opacity: 0;
-  	transition: all 1.5s ease;
-	  z-index: 0;
-  	pointer-events: none;
-  	animation: flotar 5s ease-in-out infinite;
-	}
+.flor-scroll {
+  position: fixed;
+  opacity: 0;
+  transition: all 1.8s ease;
+  z-index: 0;
+  pointer-events: none;
+  animation: flotar 6s ease-in-out infinite;
+  transform: translateX(0); /* estado inicial */
+}
 
-	.flor-1 {
-  	 top: 160px;
-  	 width: 110px;
-	}
+/* IZQUIERDA */
+.flor-1 {
+  top: 300px;
+  left: -150px;
+  width: 110px;
+}
 
-	.flor-2 {
- 	  top: 700px;
- 	  width: 100px;
-	}
+.flor-2 {
+  top: 700px;
+  left: -150px;
+  width: 100px;
+}
 
-	/* Se activa al hacer scroll */
-	.flor-visible {
-	  left: 20px;
-	  opacity: 1;
-	}    
+/* DERECHA */
+.flor-3 {
+  top: 400px;
+  right: -150px;
+  left: auto;
+  width: 100px;
+}
+
+.flor-4 {
+  top: 800px;
+  right: -150px;
+  left: auto;
+  width: 110px;
+}
+
+/* Clase que se aplica con scroll */
+.flor-visible {
+  opacity: 1;
+  transform: translateX(170px); /* desliza desde izquierda */
+}
+
+.flor-3.flor-visible,
+.flor-4.flor-visible {
+  transform: translateX(-170px); /* desliza desde derecha */
+}
 
 
   	    /* Estilos para la página #ffe9da original */
@@ -974,6 +997,11 @@
       </div>
     </header>
 	
+<!-- Flores decorativas animadas al hacer scroll -->
+<img src="source/Flor1.webp" class="flor-scroll flor-1" alt="Flor izquierda 1">
+<img src="source/Flor2.webp" class="flor-scroll flor-2" alt="Flor izquierda 2">
+<img src="source/Flor1.webp" class="flor-scroll flor-3" alt="Flor derecha 1">
+<img src="source/Flor2.webp" class="flor-scroll flor-4" alt="Flor derecha 2">	
       
       <button id="play-button">▶️</button>
       <button id="pause-button">⏸️</button>
