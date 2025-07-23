@@ -303,24 +303,20 @@
 }
         
 
-       .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    color: #004466;
-    cursor: pointer;
-    z-index: 1;
-    border-radius: 50%;
-    padding: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease;
+      .carousel-button {
+  background: none; /* sin fondo */
+  border: none;
+  color: #004466; /* color de la flecha */
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+  padding: 10px;
+  transition: color 0.3s ease;
 }
 
 .carousel-button:hover {
-    background-color: #cce7f5;
+  color: #87CEEB; /* color al pasar el mouse (opcional) */
 }
 
         .carousel-button.left {
