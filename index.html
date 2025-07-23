@@ -1098,9 +1098,7 @@
 	</ul>
      </p>
     <div class="button-container">
-      <a href="https://maps.app.goo.gl/E2VELieKP7fXyP53A" target="_blank">
-        <button id="accept-button1" class="centered-paragraph">Ver la Ubicación</button>
-      </a>
+      <button id="ver-video" class="centered-paragraph">¿Cómo llegar?</button>
     </div>
   </div>
 </div>
@@ -1577,6 +1575,27 @@ document.addEventListener("DOMContentLoaded", function () {
   flores.forEach(flor => observer.observe(flor));
 });
 </script>	    
-	    
+
+<!-- Modal de video -->
+<div id="video-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:10000; justify-content:center; align-items:center;">
+  <div style="background:white; border-radius:10px; padding:10px; position:relative; width:90%; max-width:500px;">
+    <button onclick="cerrarModal()" style="position:absolute; top:5px; right:10px; background:none; border:none; font-size:20px; cursor:pointer;">✖</button>
+    <iframe id="video-frame" width="100%" height="280" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+<script>
+function abrirModal() {
+  document.getElementById('video-modal').style.display = 'flex';
+  document.getElementById('video-frame').src = "https://www.youtube.com/embed/VIDEO_ID"; // reemplaza VIDEO_ID
+}
+
+function cerrarModal() {
+  document.getElementById('video-modal').style.display = 'none';
+  document.getElementById('video-frame').src = ""; // detiene el video
+}
+
+document.getElementById('ver-video').addEventListener('click', abrirModal);
+</script>
+		
 </body>
 </html>
