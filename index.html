@@ -292,10 +292,16 @@
             height: 100%;
         }
 
-        .carousel-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+       .carousel-image {
+    width: auto;
+    max-width: 90%;
+    height: auto;
+    max-height: 350px; /* Puedes ajustar el alto máximo */
+    object-fit: contain;
+    border-radius: 20px; /* Esquinas redondeadas */
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
         }
 
         .carousel-button {
