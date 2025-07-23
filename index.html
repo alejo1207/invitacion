@@ -319,13 +319,19 @@
   color: #87CEEB; /* color al pasar el mouse (opcional) */
 }
 
-        .carousel-button.left {
-            left: 20px;
-        }
+       .carousel-button.left {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
 
-        .carousel-button.right {
-            right: 20px;
-        }
+.carousel-button.right {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
        
         .centered-paragraph {
             text-align: center;
