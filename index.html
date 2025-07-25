@@ -46,14 +46,22 @@
 }
 	    
   	    /* Estilos para la página #ffe9da original */
-
+@keyframes moverFondo {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}
 body {
   background: 
     url("fondo.jpg") repeat,
     linear-gradient(135deg, #e6f2ff, #b3d9ff);
   background-size: auto, cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-blend-mode: multiply;
+  animation: moverFondo 60s linear infinite;
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -62,7 +70,9 @@ body {
 
 /* Fallback para iPhone, iPad y otros móviles con Safari */
 @media (max-width: 768px) {
-  body {
+  
+
+body {
     background-attachment: scroll;
   }
 }
