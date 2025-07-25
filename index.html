@@ -47,16 +47,24 @@
 	    
   	    /* Estilos para la página #ffe9da original */
 
- body {
+body {
   background: 
     url("fondo.jpg") repeat,
     linear-gradient(135deg, #e6f2ff, #b3d9ff);
   background-size: auto, cover;
   background-attachment: fixed;
+  background-blend-mode: multiply;
   margin: 0;
   padding: 0;
   min-height: 100vh;
   font-family: 'Noto Serif TC', serif;
+}
+
+/* Fallback para iPhone, iPad y otros móviles con Safari */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
 }
 
 	    
